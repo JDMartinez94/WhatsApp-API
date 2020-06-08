@@ -1,3 +1,7 @@
+<?php
+require 'API.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,9 +53,9 @@
 if (isset($_REQUEST["btnEnviar"])){    
     $telefono = $_REQUEST["txtTelefono"];
     $texto = $_REQUEST["Mensaje"];
-    echo "<script> swal({title: 'Exito', text:'Numero: $telefono mensaje: $texto', icon:'success'}) </script>";
+    mensaje($telefono,$texto);
+    echo "<script> swal({title:'Exito', text:'El mensaje fue enviado con exito al numero $telefono', icon:'success'}) </script>";
 }
-
 ?>
 
 
