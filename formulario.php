@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -16,7 +17,7 @@
     <div class="modal-dialog text-center">
         <div class="col-sm-12 main-section">
             <div class="modal-content">
-    <form  action="recibe.php" method="POST" class="col-12" style="position: relative; margin: auto; width: 500px;">
+    <form  action="" method="POST" class="col-12" style="position: relative; margin: auto; width: 500px;">
     <table>
     <tr>
         <td><b>Digita tu numero de teléfono</b></td>
@@ -28,7 +29,7 @@
         <td><b>Digita el mensaje a enviar</b></td>
         <td>
             <div class="form-group">
-            <textarea name="Mensaje" id="" cols="30" rows="5" class="form-control">Escriba su mensaje....</textarea>
+            <textarea name="Mensaje" id="" cols="30" rows="5" class="form-control" placeholder="Escriba su mensaje...."></textarea>
             </div>
         </td>
     </tr>
@@ -44,7 +45,16 @@
     </div>
     </center>
    
-    
+<?php
+if (isset($_REQUEST["btnEnviar"])){    
+    $telefono = $_REQUEST["txtTelefono"];
+    $texto = $_REQUEST["Mensaje"];
+    echo "<script> swal({title: 'Exito', text:'Numero: $telefono mensaje: $texto', icon:'success'}) </script>";
+}
+
+?>
+
+
 </body>
 
 </html>
